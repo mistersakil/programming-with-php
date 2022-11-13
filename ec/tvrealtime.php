@@ -24,6 +24,10 @@
     });
     </script>
     <style>
+    #agentWisereport {
+        padding: 10px;
+    }
+
     .countContainer {
         display: flex;
         width: 100%;
@@ -39,6 +43,7 @@
         /* background-color: #041720; */
         flex-basis: 30%;
         flex-grow: 1;
+        flex-shrink: 1;
         height: 100px;
         position: relative;
         display: flex;
@@ -135,9 +140,8 @@
                 </div>
                 <!-- /.col -->
 
-                <div class="col-md-5" style="margin-top:-1px;">
-                    <table style="width: 100%;font-size: 12px;font-weight: bold;/* color:white; */background: white;"
-                        class="table table-hover table-white table-bordered">
+                <div class="col-md-5" style="margin-top:-1px; overflow:hidden" class="table-responsive">
+                    <table class="table table-hover table-white table-bordered">
                         <thead style="background:#417B86;">
                             <tr>
                                 <th width="2%">SL</th>
