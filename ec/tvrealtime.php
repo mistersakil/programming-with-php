@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Election Commision dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/tv.css">
 
 
@@ -16,7 +18,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         setInterval(function() {
-            $("#agentWisereport").load("#agentWisereport").fadeIn("slow");
+            $("#agentWiseReport").load("#agentWiseReport").fadeIn("slow");
         }, 1000000000);
         $.ajaxSetup({
             cache: false
@@ -24,9 +26,35 @@
     });
     </script>
     <style>
-    #agentWisereport {
+    #agentWiseReport {
         padding: 10px;
+        padding-right: 0;
     }
+
+    #header {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    #header .mainLogo {
+        width: 120px;
+    }
+
+    #header .title {
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .mainContent .left {
+        background: #313136;
+    }
+
 
     .countContainer {
         display: flex;
@@ -40,7 +68,6 @@
 
 
     .countContainer .column {
-        /* background-color: #041720; */
         flex-basis: 30%;
         flex-grow: 1;
         flex-shrink: 1;
@@ -74,22 +101,29 @@
         color: white;
 
     }
+
+    .tableCol {
+        overflow: hidden;
+    }
+
+    .tableCol .table thead {
+        background: #417B86;
+    }
     </style>
 </head>
 
 <body style="background:black;">
 
-    <div class="agentWisereport" id="agentWisereport">
+    <div class="agentWiseReport" id="agentWiseReport">
         <div class="container-fluid">
             <div class="row">
-                <div
-                    style="width: 100%; flex-direction: column; display:flex; align-items:center; justify-content:center; margin-top:20px">
-                    <img src="./images/ec-logo.png" alt="logo" class="img-responsive mainLogo" style="width:100px;">
-                    <h2 style="font-size: 24px; color:white;">বাংলাদেশ নির্বাচন কমিশন </h2>
+                <div id="header">
+                    <img src="./images/ec-logo.png" alt="logo" class="img-responsive mainLogo">
+                    <h2 class="title">বাংলাদেশ নির্বাচন কমিশন </h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-7" style="background: #313136;">
+            <div class="row mainContent">
+                <div class="col-md-6 left">
                     <div class="countContainer">
                         <div class="column">
                             <img class="bgImg" src="./images/dashboard_icons/agent_this_shift.png" alt="bg">
@@ -133,35 +167,38 @@
                             <div class="title">Total Agent</div>
                         </div>
                         <!-- /.column -->
-
-
                     </div>
                     <!-- /.countContainer -->
                 </div>
                 <!-- /.col -->
 
-                <div class="col-md-5" style="margin-top:-1px; overflow:hidden" class="table-responsive">
-                    <table class="table table-hover table-white table-bordered">
-                        <thead style="background:#417B86;">
-                            <tr>
-                                <th width="2%">SL</th>
-                                <th width="8%">Mode</th>
-                                <th width="8%">Agent ID</th>
-                                <th width="14%">Agent Name</th>
+                <div class="col-md-6 tableCol">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-white table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="2%">SL</th>
+                                    <th width="8%">Mode</th>
+                                    <th width="8%">Agent ID</th>
+                                    <th width="14%">Agent Name</th>
 
-                                <th width="10%">Login Time</th>
-                                <th width="8%">Agent Status</th>
-                                <th width="10%" title="Total Call Of The Day">Total Calls</th>
-                                <th width="8%">Talk Time</th>
-                                <th width="8%">Ready Time</th>
-                                <th width="8%">Paused Time</th>
-                            </tr>
-                        </thead>
-                        <tbody style="line-height: 12px; color:black;">
+                                    <th width="10%">Login Time</th>
+                                    <th width="8%">Agent Status</th>
+                                    <th width="10%" title="Total Call Of The Day">Total Calls</th>
+                                    <th width="8%">Talk Time</th>
+                                    <th width="8%">Ready Time</th>
+                                    <th width="8%">Paused Time</th>
+                                </tr>
+                            </thead>
+                            <tbody style="line-height: 12px; color:black;">
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                        <!-- /.table -->
+                    </div>
+                    <!-- /.table-responsive -->
                 </div>
+                <!-- /.col -->
             </div>
         </div>
     </div>
